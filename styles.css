@@ -75,11 +75,9 @@ a{color:var(--ink); text-decoration-color: var(--ink); text-underline-offset:2px
 .favicon-btn {
   width: 32px;
   height: 32px;
-  display: block;       /* fix pre Edge */
-  object-fit: contain;  /* drží proporcie */
-  border-radius: 8px;
+  display: block;
+  object-fit: contain;
   cursor: pointer;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.4);
   transition: transform 0.2s ease;
 }
 .favicon-btn:hover {
