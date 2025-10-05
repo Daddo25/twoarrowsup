@@ -121,3 +121,17 @@ a{color:var(--ink);text-decoration-color: var(--ink);text-underline-offset:2px}
 @media (max-width:640px){
   .card.tab{ margin-top:16px; }
 }
+
+/* === Mobile nav alignment fix === */
+@media (max-width: 640px) {
+  .top {
+    justify-content: space-between;
+  }
+  .brand {
+    flex: 1;
+  }
+  .nav {
+    margin-left: auto;
+    justify-content: flex-end;
+  }
+}
