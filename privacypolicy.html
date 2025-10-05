@@ -4,18 +4,35 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Privacy Policy — TwoArrowsUP</title>
-  <link rel="stylesheet" href="./styles.css" />
   <link rel="icon" type="image/png" href="./assets/favicon.png" />
+  <link rel="stylesheet" href="./styles.css" />
+  <style>
+    /* Lokálne pre túto stránku – nech nemusíš meniť styles.css */
+    .brand-link{
+      display:inline-flex;align-items:center;gap:8px;
+      text-decoration:none;color:#f6a31b;font-weight:700;font-size:1.1em
+    }
+    .brand-link:focus{outline:none}
+    .brand-link:hover .brand-name{text-decoration:underline}
+    .brand-icon{
+      width:28px;height:28px;border:0;outline:0;box-shadow:none;border-radius:8px;background:none
+    }
+    /* Niektoré prehliadače pridajú okraj obrázkom vo vnútri <a> – zrušíme */
+    a img{border:0;outline:0;box-shadow:none}
+  </style>
 </head>
 <body>
-  <!-- Klikateľný favicon button -->
-  <a href="https://twoarrowsup.com" class="favicon-link">
-    <img src="./assets/favicon.png" alt="Home" class="favicon-btn">
-  </a>
+  <header class="hero" role="banner"></header>
 
   <main class="wrap">
-    <section class="card">
-      <h1 style="margin-top:30px">Privacy Policy</h1>
+    <section class="card" aria-labelledby="brand">
+      <!-- Klikateľná ikona + názov -->
+      <a href="/" class="brand-link">
+        <img src="./assets/favicon.png" alt="TwoArrowsUP icon" class="brand-icon" />
+        <span class="brand-name">TwoArrowsUP</span>
+      </a>
+
+      <h1 style="margin-top:20px">Privacy Policy</h1>
       <p>Effective date: October 2025</p>
 
       <p>TwoArrowsUP develops and publishes mobile games and apps, including <strong>RootFather</strong> and future titles. This Privacy Policy explains how we collect, use and protect your information when you use our games, apps and website.</p>
@@ -54,12 +71,19 @@
       <h2>8. Contact</h2>
       <p>If you have questions about this Privacy Policy, please contact us:</p>
       <p>Email: <a href="mailto:info@twoarrowsup.com">info@twoarrowsup.com</a></p>
+
+      <div style="text-align:center;margin-top:24px">
+        <a class="btn outline" href="/">← Back to Main Page</a>
+      </div>
     </section>
   </main>
 
   <footer class="footer">
     © <span id="year"></span> TwoArrowsUP. All rights reserved.
   </footer>
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
