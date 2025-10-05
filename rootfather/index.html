@@ -7,6 +7,21 @@
   <meta name="description" content="Arcade-casual plant game. Level up, unlock skins, beat minigames. Fair monetization: rewarded revive ads only; IAP only for Leaves." />
   <link rel="icon" type="image/png" href="./rootfather-tabicon.png" />
   <meta name="theme-color" content="#000000" />
+
+  <!-- Open Graph meta tags (for WhatsApp, Messenger, etc.) -->
+  <meta property="og:title" content="RootFather – Grow • Play • Style">
+  <meta property="og:description" content="Arcade-casual plant game. Level up, unlock skins, beat minigames. Fair and stylish.">
+  <meta property="og:image" content="https://twoarrowsup.com/rootfather/rootfather-icon.png">
+  <meta property="og:url" content="https://twoarrowsup.com/rootfather/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="TwoArrowsUP">
+
+  <!-- Twitter Card fallback -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="RootFather – Grow • Play • Style">
+  <meta name="twitter:description" content="Arcade-casual plant game. Level up, unlock skins, beat minigames. Fair and stylish.">
+  <meta name="twitter:image" content="https://twoarrowsup.com/rootfather/rootfather-icon.png">
+
   <style>
     :root{
       --bg:#000000;
@@ -27,7 +42,6 @@
     a{color:var(--gem);text-decoration:none}
     a:hover{text-decoration:underline}
 
-    /* Top bar */
     .top{
       display:flex;align-items:center;justify-content:space-between;gap:12px;
       padding:14px 18px;border-bottom:1px solid var(--line);
@@ -41,12 +55,10 @@
     .nav a.active{border-color:var(--gem); box-shadow:0 0 0 2px rgba(126,61,180,.25) inset}
     .nav img.tabicon{width:18px;height:18px;border-radius:4px}
 
-    /* Hero */
     .hero{display:grid;place-items:center;min-height:48vh;padding:24px 0;}
     .hero-logo{max-width:min(900px,92vw);height:auto;display:block}
     .spark{text-align:center;margin-top:10px;color:#e9e0d6;font-weight:700}
 
-    /* Cards + content */
     .wrap{max-width:1040px;margin:0 auto;padding:22px}
     .card{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:22px;margin:18px auto;box-shadow:0 16px 40px rgba(0,0,0,.45)}
     h1,h2{margin:4px 0 8px;color:#e9e0d6}
@@ -63,7 +75,6 @@
     .badges{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
     .badge{border:1px solid var(--line);padding:6px 10px;border-radius:999px;font-size:12px;color:#cfc7bd}
 
-    /* Screenshot grid – 4 rady × 2 stĺpce, menšia medzera medzi 2&3 */
     .gallery .row{display:flex;justify-content:space-between;gap:12px;margin-bottom:14px}
     .gallery .row.special{gap:6px}
     .gallery .row img{
@@ -73,7 +84,6 @@
 
     footer{padding:28px 18px;color:#8f877d;text-align:center;border-top:1px solid var(--line)}
 
-    /* ===== Mobile polish + nav alignment fix ===== */
     @media (max-width:640px){
       .top{padding:10px 12px;justify-content:space-between;}
       .brand{flex:0 0 auto;}
@@ -98,7 +108,6 @@
       .gallery .row.special{gap:6px}
     }
 
-    /* === Extra small screens (iPhone 13 mini and smaller) === */
     @media (max-width:380px){
       html,body{overflow-x:hidden;}
       .nav{
