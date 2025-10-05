@@ -11,26 +11,48 @@
   <meta property="og:type" content="website" />
   <meta property="og:image" content="https://twoarrowsup.com/assets/header.png" />
   <meta name="theme-color" content="#000000" />
-  <link rel="preload" href="./assets/header.png" as="image">
-  <link rel="preload" href="./assets/logo.png" as="image">
   <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
-  <header class="hero" role="banner" aria-label="TwoArrowsUP header image"></header>
+  <header class="hero" role="banner"></header>
 
   <main class="wrap">
+    <!-- ==== Hlavná karta ==== -->
     <section class="card" aria-labelledby="brand">
       <img src="./assets/logo.png" alt="TwoArrowsUP logo" class="logo" width="120" height="120" />
       <h1 id="brand">TwoArrowsUP</h1>
       <p class="tag">Creating fun, fresh and original digital experiences.</p>
+
       <div class="hr"></div>
+
       <div class="actions">
         <a class="btn" href="mailto:info@twoarrowsup.com">Contact: info@twoarrowsup.com</a>
       </div>
+
       <div style="text-align:center;margin-top:12px">
         <span class="badge">Games · Apps · Design</span>
         <span class="badge">Netherlands · Remote</span>
         <a class="badge" href="/privacypolicy">Privacy Policy</a>
+      </div>
+    </section>
+
+    <!-- ==== RootFather karta ==== -->
+    <section class="card tab game" aria-labelledby="rootfather">
+      <div class="tab-header">
+        <img src="./assets/rootfather-tabicon.png" alt="RootFather icon" class="tab-icon" width="28" height="28">
+        <h2 id="rootfather" class="tab-title">
+          <a href="/rootfather">RootFather</a>
+        </h2>
+      </div>
+
+      <p class="game-desc">
+        Grow your plant, play quirky mini-games, unlock skins & achievements. Your plant, your vibe.
+      </p>
+
+      <div class="store-btns">
+        <a class="btn" href="https://play.google.com/store/apps/details?id=com.TwoArrowsUP.RootFather">Get it on Google Play</a>
+        <a class="btn ghost" aria-disabled="true" title="Coming soon">Get it on App Store</a>
+        <a class="btn outline" href="/rootfather">More details</a>
       </div>
     </section>
   </main>
