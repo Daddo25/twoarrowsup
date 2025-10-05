@@ -7,7 +7,6 @@
   <meta name="description" content="Arcade-casual plant game. Level up, unlock skins, beat minigames. Fair monetization: rewarded revive ads only; IAP only for Leaves." />
   <link rel="icon" type="image/png" href="./rootfather-icon.png" />
   <meta name="theme-color" content="#000000" />
-
   <style>
     :root{
       --bg:#000000;
@@ -28,21 +27,26 @@
     a{color:var(--gem);text-decoration:none}
     a:hover{text-decoration:underline}
 
+    /* Top bar */
     .top{
       display:flex;align-items:center;justify-content:space-between;gap:12px;
-      padding:14px 18px;border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(0,0,0,.9);backdrop-filter:saturate(120%) blur(6px); z-index:10;
+      padding:14px 18px;border-bottom:1px solid var(--line);
+      position:sticky;top:0;background:rgba(0,0,0,.9);
+      backdrop-filter:saturate(120%) blur(6px); z-index:10;
     }
     .brand a{display:flex;align-items:center;gap:10px;color:#e9e0d6;text-decoration:none;font-weight:800}
     .brand img{width:28px;height:28px;border-radius:6px}
     .nav{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
-    .nav a{padding:8px 12px;border-radius:999px;border:1px solid var(--line);color:#e9e0d6;display:flex;align-items:center;gap:8px}
+    .nav a{padding:8px 12px;border-radius:999px;border:1px solid var(--line);color:#e9e0d6;display:flex;align-items:center;gap:8px;white-space:nowrap}
     .nav a.active{border-color:var(--gem); box-shadow:0 0 0 2px rgba(126,61,180,.25) inset}
     .nav img.tabicon{width:18px;height:18px;border-radius:4px}
 
+    /* Hero */
     .hero{display:grid;place-items:center;min-height:48vh;padding:24px 0;}
     .hero-logo{max-width:min(900px,92vw);height:auto;display:block}
     .spark{text-align:center;margin-top:10px;color:#e9e0d6;font-weight:700}
 
+    /* Cards + content */
     .wrap{max-width:1040px;margin:0 auto;padding:22px}
     .card{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:22px;margin:18px auto;box-shadow:0 16px 40px rgba(0,0,0,.45)}
     h1,h2{margin:4px 0 8px;color:#e9e0d6}
@@ -59,42 +63,40 @@
     .badges{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
     .badge{border:1px solid var(--line);padding:6px 10px;border-radius:999px;font-size:12px;color:#cfc7bd}
 
-    .gallery .row{
-      display:flex;
-      justify-content:space-between;
-      gap:12px;
-      margin-bottom:14px;
-    }
-    .gallery .row.special{
-      gap:6px;
-    }
+    /* Screenshot grid – 4 rady × 2 stĺpce, menšia medzera medzi 2&3 */
+    .gallery .row{display:flex;justify-content:space-between;gap:12px;margin-bottom:14px}
+    .gallery .row.special{gap:6px}
     .gallery .row img{
-      width:50%;
-      height:auto;
-      border-radius:14px;
-      border:1px solid var(--line);
-      background:#000;
-      object-fit:contain;
+      width:50%;height:auto;border-radius:14px;border:1px solid var(--line);
+      background:#000;object-fit:contain;
     }
-
-    @media (max-width:900px){
-      .wrap{padding:12px}
-      .gallery .row{flex-direction:column;gap:10px}
-      .gallery .row img{width:100%;}
-    }
-
-    /* simple fade-in on scroll */
-    @keyframes fadeUp {from{opacity:0; transform:translateY(6px)} to{opacity:1; transform:translateY(0)}}
-    .fade{animation:fadeUp .6s ease both;}
 
     footer{padding:28px 18px;color:#8f877d;text-align:center;border-top:1px solid var(--line)}
+
+    /* ===== Mobile polish ===== */
+    @media (max-width:520px){
+      .top{padding:10px 12px}
+      .brand img{width:24px;height:24px}
+      .brand a{font-size:15px}
+      .nav{gap:8px}
+      .nav a{padding:6px 10px;font-size:14px}
+      .hero{min-height:38vh;padding:14px 0}
+      .hero-logo{max-width:88vw}
+      .spark{margin-top:6px}
+      .wrap{padding:12px}
+      .card{padding:16px;border-radius:16px}
+      .actions .btn{padding:9px 14px}
+      .badges .badge{font-size:11px}
+      .gallery .row{gap:10px;margin-bottom:12px}
+      .gallery .row.special{gap:6px}
+    }
   </style>
 </head>
 <body>
   <div class="top">
     <div class="brand"><a href="/"><img src="./favicon.png" alt="TwoArrowsUP"/><span>TwoArrowsUP</span></a></div>
     <nav class="nav">
-      <a href="/">Home</a>
+      <!-- Home odstránený na prianie; značka vľavo je klikateľná domov -->
       <a class="active" href="/rootfather"><img class="tabicon" src="./rootfather-tabicon.png" alt="RootFather icon"/>RootFather</a>
       <a href="/privacypolicy">Privacy Policy</a>
     </nav>
@@ -133,7 +135,7 @@
       </div>
     </section>
 
-    <section class="card fade">
+    <section class="card">
       <h2>About the game</h2>
       <p>🌱 <strong>Take care of your own plant</strong><br>
       Water it, remove weeds, and use fertilizers to keep it alive and growing. Daily play rewards you with Seeds, XP, and special items.</p>
