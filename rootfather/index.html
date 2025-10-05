@@ -97,6 +97,23 @@
       .gallery .row{gap:10px;margin-bottom:12px}
       .gallery .row.special{gap:6px}
     }
+
+    /* === Extra small screens (iPhone 13 mini and smaller) === */
+    @media (max-width:380px){
+      html,body{overflow-x:hidden;}
+      .nav{
+        flex-direction:column;
+        align-items:flex-end;
+        flex-wrap:nowrap;
+        gap:6px;
+        margin-left:auto;
+      }
+      .nav a{
+        padding:6px 8px;
+        font-size:13px;
+      }
+      .top{gap:8px;}
+    }
   </style>
 </head>
 <body>
