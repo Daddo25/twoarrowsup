@@ -1,3 +1,4 @@
+```html
 <!doctype html>
 <html lang="en">
 <head>
@@ -8,7 +9,6 @@
   <link rel="icon" type="image/png" href="./rootfather-tabicon.png" />
   <meta name="theme-color" content="#000000" />
 
-  <!-- Open Graph meta tags (for WhatsApp, Messenger, etc.) -->
   <meta property="og:title" content="RootFather – Grow • Play • Style">
   <meta property="og:description" content="Arcade-casual plant game. Level up, unlock skins, beat minigames. Fair and stylish.">
   <meta property="og:image" content="https://twoarrowsup.com/rootfather/rootfather-icon.png">
@@ -16,7 +16,6 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="TwoArrowsUP">
 
-  <!-- Twitter Card fallback -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="RootFather – Grow • Play • Style">
   <meta name="twitter:description" content="Arcade-casual plant game. Level up, unlock skins, beat minigames. Fair and stylish.">
@@ -59,6 +58,29 @@
     .hero-logo{max-width:min(900px,92vw);height:auto;display:block}
     .spark{text-align:center;margin-top:10px;color:#e9e0d6;font-weight:700}
 
+    .trailer{
+      display:flex;
+      justify-content:center;
+      padding:10px 22px 4px;
+    }
+
+    .video-wrapper{
+      width:100%;
+      max-width:420px;
+      aspect-ratio:9/16;
+      border-radius:18px;
+      overflow:hidden;
+      background:#000;
+      border:1px solid var(--line);
+      box-shadow:0 16px 40px rgba(0,0,0,.55);
+    }
+
+    .video-wrapper iframe{
+      width:100%;
+      height:100%;
+      display:block;
+    }
+
     .wrap{max-width:1040px;margin:0 auto;padding:22px}
     .card{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:22px;margin:18px auto;box-shadow:0 16px 40px rgba(0,0,0,.45)}
     h1,h2{margin:4px 0 8px;color:#e9e0d6}
@@ -100,6 +122,8 @@
       .hero{min-height:38vh;padding:14px 0}
       .hero-logo{max-width:88vw}
       .spark{margin-top:6px}
+      .trailer{padding:8px 12px 2px}
+      .video-wrapper{max-width:360px;border-radius:16px}
       .wrap{padding:12px}
       .card{padding:16px;border-radius:16px}
       .actions .btn{padding:9px 14px}
@@ -137,6 +161,18 @@
   <section class="hero">
     <img class="hero-logo" src="./rootfather-logo.png" alt="RootFather logo" />
     <div class="spark">Grow • Play • Style</div>
+  </section>
+
+  <section class="trailer">
+    <div class="video-wrapper">
+      <iframe
+        src="https://www.youtube.com/embed/SD33kELC7tw"
+        title="RootFather Trailer"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen>
+      </iframe>
+    </div>
   </section>
 
   <main class="wrap">
@@ -191,3 +227,4 @@
   <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 </body>
 </html>
+```
