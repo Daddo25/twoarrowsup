@@ -1,8 +1,8 @@
-
 :root{
   --bg:#efe4d2;
   --ink:#e19a21;
   --panel:#000000;
+  --hero-scale:1;
 }
 
 *{box-sizing:border-box}
@@ -17,19 +17,34 @@ body{
 
 .hero{
   width:100%;
-  min-height:48vh;
-  background:url('./assets/header.png') center/cover no-repeat;
+  min-height:56vh;
   display:flex;
   align-items:flex-end;
   justify-content:center;
-  position:relative;
+  position:sticky;
+  top:0;
+  overflow:hidden;
+  z-index:0;
+  background:none;
+}
+
+.hero::before{
+  content:"";
+  position:absolute;
+  inset:-4%;
+  background:url('./assets/header.png') center/cover no-repeat;
+  transform:scale(var(--hero-scale));
+  transform-origin:center;
+  transition:transform .08s linear;
+  z-index:0;
 }
 
 .hero::after{
   content:"";
   position:absolute;
   inset:0;
-  background: linear-gradient(180deg, rgba(239,228,210,0.1) 0%, rgba(239,228,210,0.7) 65%, var(--bg) 100%);
+  background:linear-gradient(180deg, rgba(239,228,210,0.05) 0%, rgba(239,228,210,0.68) 65%, var(--bg) 100%);
+  z-index:1;
 }
 
 /* === Trailer video === */
@@ -59,8 +74,10 @@ body{
 
 .wrap{
   max-width:980px;
-  margin:0 auto;
+  margin:-70px auto 0;
   padding:24px;
+  position:relative;
+  z-index:2;
 }
 
 .card{
@@ -107,6 +124,8 @@ h1{
   font-size:14px;
   color:#000;
   padding:24px;
+  position:relative;
+  z-index:2;
 }
 
 a{
@@ -179,10 +198,13 @@ a{
 .tab-title a{
   color:var(--ink);
   text-decoration:none;
+  display:inline-block;
+  border-bottom:2px solid var(--ink);
+  padding-bottom:2px;
 }
 
 .tab-title a:hover{
-  text-decoration:underline;
+  opacity:.85;
 }
 
 .game-desc{
@@ -216,7 +238,12 @@ a{
 
 @media (max-width:640px){
   .hero{
-    min-height:40vh;
+    min-height:48vh;
+  }
+
+  .wrap{
+    margin:-54px auto 0;
+    padding:14px;
   }
 
   .video-section{
@@ -229,7 +256,7 @@ a{
   }
 
   .card{
-    margin:18px 12px 16px;
+    margin:18px 0 16px;
     padding:22px;
   }
 
@@ -237,4 +264,3 @@ a{
     margin-top:16px;
   }
 }
-
