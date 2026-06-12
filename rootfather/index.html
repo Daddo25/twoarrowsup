@@ -222,24 +222,31 @@
       .brand a{font-size:15px}
 
       .hero{
-        min-height:38vh;
-        padding:4px 0;
+        min-height:48vh;
+        padding:0;
+        top:51px;
         overflow:hidden;
         display:grid;
         place-items:center;
       }
 
       .hero-logo{
-        width:100vw;
+        width:120vw;
         max-width:none;
         position:relative;
         left:auto;
         top:auto;
-        transform:scale(1.25) scale(var(--rf-hero-scale));
+        transform:scale(var(--rf-hero-scale));
         transform-origin:center;
       }
 
-      .wrap{padding:12px;margin:-36px auto 0}
+      .wrap{
+        padding:12px;
+        margin:-92px auto 0;
+        position:relative;
+        z-index:2;
+      }
+
       .card{padding:16px;border-radius:16px}
       .actions .btn{padding:9px 14px}
       .badges .badge{font-size:11px}
