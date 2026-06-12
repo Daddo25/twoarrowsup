@@ -29,85 +29,224 @@
       --panel:#121215;
       --line:rgba(255,255,255,.08);
     }
+
     *{box-sizing:border-box}
     html,body{margin:0;padding:0}
+
     body{
       font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
       background: var(--bg);
       color: #e9e0d6;
       line-height:1.6;
     }
+
     a{color:var(--gem);text-decoration:none}
     a:hover{text-decoration:underline}
 
     .top{
-      display:flex;align-items:center;justify-content:space-between;gap:12px;
-      padding:14px 18px;border-bottom:1px solid var(--line);
-      position:sticky;top:0;background:rgba(0,0,0,.9);
-      backdrop-filter:saturate(120%) blur(6px); z-index:10;
-    }
-    .brand a{display:flex;align-items:center;gap:10px;color:#e9e0d6;text-decoration:none;font-weight:800}
-    .brand img{width:28px;height:28px;border-radius:6px}
-    .nav{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
-    .nav a{padding:8px 12px;border-radius:999px;border:1px solid var(--line);color:#e9e0d6;display:flex;align-items:center;gap:8px;white-space:nowrap}
-    .nav a.active{border-color:var(--gem); box-shadow:0 0 0 2px rgba(126,61,180,.25) inset}
-    .nav img.tabicon{width:18px;height:18px;border-radius:4px}
-
-    .hero{display:grid;place-items:center;min-height:48vh;padding:24px 0;}
-    .hero-logo{max-width:min(900px,92vw);height:auto;display:block}
-    .spark{text-align:center;margin-top:10px;color:#e9e0d6;font-weight:700}
-
-    .trailer{
       display:flex;
-      justify-content:center;
-      padding:10px 22px 4px;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      padding:14px 18px;
+      border-bottom:1px solid var(--line);
+      position:sticky;
+      top:0;
+      background:rgba(0,0,0,.9);
+      backdrop-filter:saturate(120%) blur(6px);
+      z-index:10;
     }
 
-    .video-wrapper{
-      width:100%;
-      max-width:420px;
-      aspect-ratio:9/16;
-      border-radius:18px;
-      overflow:hidden;
-      background:#000;
+    .brand a{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      color:#e9e0d6;
+      text-decoration:none;
+      font-weight:800;
+    }
+
+    .brand img{
+      width:28px;
+      height:28px;
+      border-radius:6px;
+    }
+
+    .nav{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+
+    .nav a{
+      padding:8px 12px;
+      border-radius:999px;
       border:1px solid var(--line);
-      box-shadow:0 16px 40px rgba(0,0,0,.55);
+      color:#e9e0d6;
+      display:flex;
+      align-items:center;
+      gap:8px;
+      white-space:nowrap;
     }
 
-    .video-wrapper iframe{
+    .nav a.active{
+      border-color:var(--gem);
+      box-shadow:0 0 0 2px rgba(126,61,180,.25) inset;
+    }
+
+    .nav img.tabicon{
+      width:18px;
+      height:18px;
+      border-radius:4px;
+    }
+
+    .hero{
+      display:grid;
+      place-items:center;
+      min-height:48vh;
+      padding:24px 0;
+    }
+
+    .hero-logo{
+      max-width:min(900px,92vw);
+      height:auto;
+      display:block;
+    }
+
+    .spark{
+      text-align:center;
+      margin-top:10px;
+      color:#e9e0d6;
+      font-weight:700;
+    }
+
+    .wrap{
+      max-width:1040px;
+      margin:0 auto;
+      padding:22px;
+    }
+
+    .card{
+      background:var(--panel);
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:22px;
+      margin:18px auto;
+      box-shadow:0 16px 40px rgba(0,0,0,.45);
+    }
+
+    h1,h2{
+      margin:4px 0 8px;
+      color:#e9e0d6;
+    }
+
+    .tag{
+      margin:0 0 8px;
+      color:#cfc7bd;
+    }
+
+    .hr{
+      height:1px;
+      background:linear-gradient(90deg,transparent,rgba(126,61,180,.35),transparent);
+      margin:18px 0;
+    }
+
+    .actions{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+
+    .btn{
+      display:inline-block;
+      padding:10px 16px;
+      border-radius:12px;
+      border:2px solid var(--gem);
+      color:#e9e0d6;
+    }
+
+    .btn.fill{
+      background:linear-gradient(180deg, var(--gem), #532683);
+    }
+
+    .btn.dark{
+      border-color:var(--ink-2);
+      color:#e9e0d6;
+    }
+
+    .btn.ghost{
+      border-color:var(--line);
+      opacity:.7;
+    }
+
+    .btn[aria-disabled="true"]{
+      pointer-events:none;
+      opacity:.6;
+    }
+
+    .badges{
+      display:flex;
+      gap:8px;
+      flex-wrap:wrap;
+      margin-top:10px;
+    }
+
+    .badge{
+      border:1px solid var(--line);
+      padding:6px 10px;
+      border-radius:999px;
+      font-size:12px;
+      color:#cfc7bd;
+    }
+
+    .gallery .row{
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
+      margin-bottom:14px;
+    }
+
+    .gallery .row img,
+    .gallery .row .video-wrapper{
+      width:50%;
+      height:auto;
+      border-radius:14px;
+      border:1px solid var(--line);
+      background:#000;
+      object-fit:contain;
+    }
+
+    .gallery .row .video-wrapper{
+      max-width:none;
+      aspect-ratio:9/16;
+      overflow:hidden;
+      box-shadow:none;
+    }
+
+    .gallery .row .video-wrapper iframe{
       width:100%;
       height:100%;
       display:block;
     }
 
-    .wrap{max-width:1040px;margin:0 auto;padding:22px}
-    .card{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:22px;margin:18px auto;box-shadow:0 16px 40px rgba(0,0,0,.45)}
-    h1,h2{margin:4px 0 8px;color:#e9e0d6}
-    .tag{margin:0 0 8px;color:#cfc7bd}
-    .hr{height:1px;background:linear-gradient(90deg,transparent,rgba(126,61,180,.35),transparent);margin:18px 0}
-
-    .actions{display:flex;gap:12px;flex-wrap:wrap}
-    .btn{display:inline-block;padding:10px 16px;border-radius:12px;border:2px solid var(--gem);color:#e9e0d6}
-    .btn.fill{background:linear-gradient(180deg, var(--gem), #532683)}
-    .btn.dark{border-color:var(--ink-2);color:#e9e0d6}
-    .btn.ghost{border-color:var(--line);opacity:.7}
-    .btn[aria-disabled="true"]{pointer-events:none;opacity:.6;}
-
-    .badges{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
-    .badge{border:1px solid var(--line);padding:6px 10px;border-radius:999px;font-size:12px;color:#cfc7bd}
-
-    .gallery .row{display:flex;justify-content:space-between;gap:12px;margin-bottom:14px}
-    .gallery .row.special{gap:6px}
-    .gallery .row img{
-      width:50%;height:auto;border-radius:14px;border:1px solid var(--line);
-      background:#000;object-fit:contain;
+    footer{
+      padding:28px 18px;
+      color:#8f877d;
+      text-align:center;
+      border-top:1px solid var(--line);
     }
 
-    footer{padding:28px 18px;color:#8f877d;text-align:center;border-top:1px solid var(--line)}
-
     @media (max-width:640px){
-      .top{padding:10px 12px;justify-content:space-between;}
-      .brand{flex:0 0 auto;}
+      .top{
+        padding:10px 12px;
+        justify-content:space-between;
+      }
+
+      .brand{
+        flex:0 0 auto;
+      }
+
       .nav{
         margin-left:auto;
         flex:1 1 auto;
@@ -115,24 +254,62 @@
         gap:6px;
         flex-wrap:nowrap;
       }
-      .nav a{padding:6px 10px;font-size:14px;}
-      .brand img{width:24px;height:24px}
-      .brand a{font-size:15px}
-      .hero{min-height:38vh;padding:14px 0}
-      .hero-logo{max-width:88vw}
-      .spark{margin-top:6px}
-      .trailer{padding:8px 12px 2px}
-      .video-wrapper{max-width:360px;border-radius:16px}
-      .wrap{padding:12px}
-      .card{padding:16px;border-radius:16px}
-      .actions .btn{padding:9px 14px}
-      .badges .badge{font-size:11px}
-      .gallery .row{gap:10px;margin-bottom:12px}
-      .gallery .row.special{gap:6px}
+
+      .nav a{
+        padding:6px 10px;
+        font-size:14px;
+      }
+
+      .brand img{
+        width:24px;
+        height:24px;
+      }
+
+      .brand a{
+        font-size:15px;
+      }
+
+      .hero{
+        min-height:38vh;
+        padding:14px 0;
+      }
+
+      .hero-logo{
+        max-width:88vw;
+      }
+
+      .spark{
+        margin-top:6px;
+      }
+
+      .wrap{
+        padding:12px;
+      }
+
+      .card{
+        padding:16px;
+        border-radius:16px;
+      }
+
+      .actions .btn{
+        padding:9px 14px;
+      }
+
+      .badges .badge{
+        font-size:11px;
+      }
+
+      .gallery .row{
+        gap:10px;
+        margin-bottom:12px;
+      }
     }
 
     @media (max-width:380px){
-      html,body{overflow-x:hidden;}
+      html,body{
+        overflow-x:hidden;
+      }
+
       .nav{
         flex-direction:column;
         align-items:flex-end;
@@ -140,19 +317,33 @@
         gap:6px;
         margin-left:auto;
       }
+
       .nav a{
         padding:6px 8px;
         font-size:13px;
       }
-      .top{gap:8px;}
+
+      .top{
+        gap:8px;
+      }
     }
   </style>
 </head>
+
 <body>
   <div class="top">
-    <div class="brand"><a href="/"><img src="./favicon.png" alt="TwoArrowsUP"/><span>TwoArrowsUP</span></a></div>
+    <div class="brand">
+      <a href="/">
+        <img src="./favicon.png" alt="TwoArrowsUP"/>
+        <span>TwoArrowsUP</span>
+      </a>
+    </div>
+
     <nav class="nav">
-      <a class="active" href="/rootfather"><img class="tabicon" src="./rootfather-tabicon.png" alt="RootFather icon"/>RootFather</a>
+      <a class="active" href="/rootfather">
+        <img class="tabicon" src="./rootfather-tabicon.png" alt="RootFather icon"/>
+        RootFather
+      </a>
       <a href="/privacypolicy">Privacy Policy</a>
     </nav>
   </div>
@@ -162,28 +353,19 @@
     <div class="spark">Grow • Play • Style</div>
   </section>
 
-  <section class="trailer">
-    <div class="video-wrapper">
-      <iframe
-        src="https://www.youtube.com/embed/SD33kELC7tw"
-        title="RootFather Trailer"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowfullscreen>
-      </iframe>
-    </div>
-  </section>
-
   <main class="wrap">
     <section class="card">
       <h1>Arcade-casual plant game</h1>
       <p class="tag">Water, weed and fertilize. Win quirky minigames. Unlock skins and achievements. Your plant, your vibe 🌱💎</p>
+
       <div class="hr"></div>
+
       <div class="actions">
         <a class="btn fill" href="https://play.google.com/store/apps/details?id=com.TwoArrowsUP.RootFather">Get it on Google Play</a>
         <a class="btn ghost" aria-disabled="true" title="Coming soon">Get it on App Store</a>
         <a class="btn dark" href="mailto:info@twoarrowsup.com">info@twoarrowsup.com</a>
       </div>
+
       <div class="badges">
         <span class="badge">Rewarded revive ads only</span>
         <span class="badge">IAP only for Leaves</span>
@@ -193,23 +375,52 @@
     </section>
 
     <section class="card">
-      <h2>Screenshots</h2>
+      <h2>Screenshots & Trailer</h2>
+
       <div class="gallery">
-        <div class="row"><img src="./img/1.png" alt="1"><img src="./img/2.png" alt="6"></div>
-        <div class="row special"><img src="./img/3.png" alt="2"><img src="./img/4.png" alt="3"></div>
-        <div class="row"><img src="./img/5.png" alt="7"><img src="./img/6.png" alt="8"></div>
-        <div class="row"><img src="./img/7.png" alt="4"><img src="./img/8.png" alt="5"></div>
+        <div class="row">
+          <div class="video-wrapper">
+            <iframe
+              src="https://www.youtube.com/embed/SD33kELC7tw"
+              title="RootFather Trailer"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen>
+            </iframe>
+          </div>
+
+          <img src="./img/1.png" alt="RootFather screenshot 1">
+        </div>
+
+        <div class="row">
+          <img src="./img/3.png" alt="RootFather screenshot 2">
+          <img src="./img/5.png" alt="RootFather screenshot 3">
+        </div>
+
+        <div class="row">
+          <img src="./img/4.png" alt="RootFather screenshot 4">
+          <img src="./img/2.png" alt="RootFather screenshot 5">
+        </div>
+
+        <div class="row">
+          <img src="./img/7.png" alt="RootFather screenshot 6">
+          <img src="./img/8.png" alt="RootFather screenshot 7">
+        </div>
       </div>
     </section>
 
     <section class="card">
       <h2>About the game</h2>
+
       <p>🌱 <strong>Take care of your own plant</strong><br>
       Water it, remove weeds, and use fertilizers to keep it alive and growing. Daily play rewards you with Seeds, XP, and special items.</p>
+
       <p>🎨 <strong>Customize your style</strong><br>
       Unlock dozens of skins for plants and backgrounds. Mix and match colors and themes to create your perfect design. Collect Seeds and <strong>Leaves</strong> to expand your collection.</p>
+
       <p>🎮 <strong>Play exciting mini-games</strong><br>
       Shoot waves of bugs, glide through the air with your leaf, face off in Cactus X Bugs, or blast down invading swarms. Each mini-game brings rewards, XP, and achievements.</p>
+
       <p>🏆 <strong>Achievements & progression</strong><br>
       Complete tasks, level up, and earn trophies. From simple goals to the ultimate platinum challenge, there’s always something new to unlock.</p>
     </section>
@@ -223,6 +434,9 @@
   <footer>
     © <span id="y"></span> TwoArrowsUP — RootFather
   </footer>
-  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
