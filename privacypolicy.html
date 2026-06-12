@@ -8,7 +8,6 @@
   <link rel="icon" type="image/png" href="./assets/favicon.png" />
   <meta name="theme-color" content="#000000" />
 
-  <!-- Open Graph & Twitter preview -->
   <meta property="og:title" content="Privacy Policy — TwoArrowsUP" />
   <meta property="og:description" content="How TwoArrowsUP handles your data in our games and apps." />
   <meta property="og:type" content="website" />
@@ -23,13 +22,24 @@
   <link rel="stylesheet" href="./styles.css" />
   <style>
     .brand-link{
-      display:inline-flex;align-items:center;gap:8px;
-      text-decoration:none;color:#f6a31b;font-weight:700;font-size:1.1em
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      text-decoration:none;
+      color:#f6a31b;
+      font-weight:700;
+      font-size:1.1em;
     }
     .brand-link:focus{outline:none}
     .brand-link:hover .brand-name{text-decoration:underline}
     .brand-icon{
-      width:28px;height:28px;border:0;outline:0;box-shadow:none;border-radius:8px;background:none
+      width:28px;
+      height:28px;
+      border:0;
+      outline:0;
+      box-shadow:none;
+      border-radius:8px;
+      background:none;
     }
     a img{border:0;outline:0;box-shadow:none}
   </style>
@@ -96,6 +106,15 @@
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    function updateHeroZoom(){
+      const scrollY = window.scrollY || window.pageYOffset;
+      const scale = Math.min(1.18, 1 + scrollY / 1800);
+      document.documentElement.style.setProperty('--hero-scale', scale);
+    }
+
+    window.addEventListener('scroll', updateHeroZoom, { passive:true });
+    window.addEventListener('load', updateHeroZoom);
   </script>
 </body>
 </html>
