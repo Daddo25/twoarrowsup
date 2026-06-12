@@ -103,39 +103,52 @@
     }
 
     .hero{
-      display:grid;
-      place-items:center;
+      width:100%;
       min-height:48vh;
-      padding:24px 0;
+      display:flex;
+      align-items:flex-end;
+      justify-content:center;
       position:sticky;
       top:57px;
       z-index:0;
       overflow:hidden;
       background:#000;
+      isolation:isolate;
     }
 
     .hero::before{
       content:"";
       position:absolute;
-      inset:0;
-      background:radial-gradient(circle at center, rgba(126,61,180,.24), transparent 54%);
+      inset:-8%;
+      background:radial-gradient(circle at center, rgba(126,61,180,.35), rgba(126,61,180,.13) 34%, transparent 66%);
       z-index:0;
+      pointer-events:none;
+    }
+
+    .hero::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,.12) 62%, var(--bg) 100%);
+      z-index:1;
+      pointer-events:none;
     }
 
     .hero-logo{
-      max-width:min(900px,92vw);
+      width:min(900px,92vw);
       height:auto;
       display:block;
       position:relative;
-      z-index:1;
+      z-index:2;
       transform:scale(var(--rf-hero-scale));
       transform-origin:center;
       transition:transform .08s linear;
+      will-change:transform;
     }
 
     .wrap{
       max-width:1040px;
-      margin:-48px auto 0;
+      margin:-70px auto 0;
       padding:22px;
       position:relative;
       z-index:2;
@@ -223,30 +236,25 @@
 
       .hero{
         min-height:48vh;
+        top:45px;
+        align-items:flex-end;
+        justify-content:center;
         padding:0;
-        top:51px;
-        overflow:hidden;
-        display:grid;
-        place-items:center;
+      }
+
+      .hero::before{
+        inset:-10%;
+        background:radial-gradient(circle at center, rgba(126,61,180,.38), rgba(126,61,180,.14) 36%, transparent 68%);
       }
 
       .hero-logo{
-        width:120vw;
+        width:min(760px,118vw);
         max-width:none;
-        position:relative;
-        left:auto;
-        top:auto;
         transform:scale(var(--rf-hero-scale));
         transform-origin:center;
       }
 
-      .wrap{
-        padding:12px;
-        margin:-92px auto 0;
-        position:relative;
-        z-index:2;
-      }
-
+      .wrap{padding:12px;margin:-70px auto 0}
       .card{padding:16px;border-radius:16px}
       .actions .btn{padding:9px 14px}
       .badges .badge{font-size:11px}
@@ -258,6 +266,9 @@
       .nav{flex-direction:column;align-items:flex-end;flex-wrap:nowrap;gap:6px;margin-left:auto}
       .nav a{padding:6px 8px;font-size:13px}
       .top{gap:8px}
+      .hero{top:78px;min-height:44vh}
+      .hero-logo{width:min(680px,126vw)}
+      .wrap{margin:-62px auto 0}
     }
   </style>
 </head>
