@@ -14,6 +14,7 @@
   <meta property="og:url" content="https://twoarrowsup.com/" />
   <meta property="og:image" content="https://twoarrowsup.com/assets/logo.png" />
   <meta property="og:site_name" content="TwoArrowsUP" />
+
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="TwoArrowsUP — digital experiences" />
   <meta name="twitter:description" content="Creating fun, fresh and original digital experiences." />
@@ -21,18 +22,24 @@
 
   <link rel="stylesheet" href="./styles.css" />
 </head>
+
 <body>
   <header class="hero" role="banner"></header>
 
   <main class="wrap">
     <section class="card" aria-labelledby="brand">
       <h1 id="brand">TwoArrowsUP</h1>
-      <p class="tag">Creating fun, fresh and original digital experiences.</p>
+
+      <p class="tag">
+        Creating fun, fresh and original digital experiences.
+      </p>
 
       <div class="hr"></div>
 
       <div class="actions">
-        <a class="btn" href="mailto:info@twoarrowsup.com">Contact: info@twoarrowsup.com</a>
+        <a class="btn" href="mailto:info@twoarrowsup.com">
+          Contact: info@twoarrowsup.com
+        </a>
       </div>
 
       <div style="text-align:center;margin-top:12px">
@@ -44,20 +51,42 @@
 
     <section class="card tab game" aria-labelledby="rootfather">
       <div class="tab-header">
-        <img src="./assets/rootfather-tabicon.png" alt="RootFather icon" class="tab-icon" width="28" height="28">
+        <img
+          src="./assets/rootfather-tabicon.png"
+          alt="RootFather icon"
+          class="tab-icon"
+          width="28"
+          height="28"
+        >
+
         <h2 id="rootfather" class="tab-title">
           <a href="/rootfather">RootFather</a>
         </h2>
       </div>
 
       <p class="game-desc">
-        Grow your plant, play quirky mini-games, unlock skins & achievements. Your plant, your vibe.
+        Grow your plant, play quirky mini-games, unlock skins & achievements.
+        Your plant, your vibe.
       </p>
 
       <div class="store-btns">
-        <a class="btn" href="https://play.google.com/store/apps/details?id=com.TwoArrowsUP.RootFather">Get it on Google Play</a>
-        <a class="btn ghost" aria-disabled="true" title="Coming soon">Get it on App Store</a>
-        <a class="btn outline" href="/rootfather">More details</a>
+        <a
+          class="btn"
+          href="https://play.google.com/store/apps/details?id=com.TwoArrowsUP.RootFather"
+        >
+          Get it on Google Play
+        </a>
+
+        <a
+          class="btn"
+          href="https://apps.apple.com/app/id6754025563"
+        >
+          Get it on App Store
+        </a>
+
+        <a class="btn outline" href="/rootfather">
+          More details
+        </a>
       </div>
     </section>
   </main>
@@ -69,13 +98,13 @@
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    function updateHeroZoom(){
+    function updateHeroZoom() {
       const scrollY = window.scrollY || window.pageYOffset;
       const scale = Math.min(1.18, 1 + scrollY / 1800);
       document.documentElement.style.setProperty('--hero-scale', scale);
     }
 
-    window.addEventListener('scroll', updateHeroZoom, { passive:true });
+    window.addEventListener('scroll', updateHeroZoom, { passive: true });
     window.addEventListener('load', updateHeroZoom);
   </script>
 </body>
